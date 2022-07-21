@@ -1,16 +1,8 @@
 <template>
   <a-layout-header class="header">
-    <div class="logo" />
-    <a-menu
-        v-model:selectedKeys="selectedKeys1"
-        theme="dark"
-        mode="horizontal"
-        :style="{ lineHeight: '64px' }"
-    >
-      <a-menu-item key="1">nav 111</a-menu-item>
-      <a-menu-item key="2">nav 2</a-menu-item>
-      <a-menu-item key="3">nav 3</a-menu-item>
-    </a-menu>
+    <h1 style="text-align: center; color: white">
+      应用管理
+    </h1>
   </a-layout-header>
 </template>
 
@@ -21,4 +13,12 @@ export default defineComponent({
   name: 'the-header',
 });
 </script>
+
+<style scoped>
+.ant-layout-header {
+  /*padding: 0;*/
+  background: #1890ff;
+}
+
+</style>
 
