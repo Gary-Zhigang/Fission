@@ -24,7 +24,7 @@
                   <h3><line-chart-outlined /> 数据分析</h3>
                 </span>
           </template>
-          <a-menu-item key="5">裂变数据分析</a-menu-item>
+          <a-menu-item key="5"><router-link to="/fission-da">裂变数据分析</router-link></a-menu-item>
           <a-menu-item key="6">市场数据分析</a-menu-item>
         </a-sub-menu>
       </a-menu>

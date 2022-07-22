@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/home.vue'
 import InviteNew from '../components/invite-new.vue'
+import FissionDA from '../components/fission-da.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,6 +12,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path:'/invite-new',
         component: InviteNew,
+      },
+      {
+        path:'/fission-da',
+        component: FissionDA,
       }
     ]
   },
