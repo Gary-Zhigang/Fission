@@ -1,11 +1,12 @@
 <template>
-  <a-layout style="padding: 24px 0; background: #fff">
+  <a-layout style="height: 840px; padding: 24px 0; background: #fff">
     <a-layout-sider width="200" style="background: #fff">
       <a-menu
           v-model:selectedKeys="selectedKeys2"
           v-model:openKeys="openKeys"
           mode="inline"
           style="height: 100%;"
+          @click="handleClick"
       >
         <a-sub-menu key="sub1">
           <template #title>
@@ -30,16 +31,32 @@
       </a-menu>
     </a-layout-sider>
     <a-layout-content :style="{ padding: '0 24px', minHeight: '280px' }">
+      <div class="welcome" v-show="isShowWelcome">
+        <h1>欢迎使用应用管理系统！</h1>
+      </div>
       <router-view/>
     </a-layout-content>
   </a-layout>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {defineComponent, ref} from 'vue';
 
 export default defineComponent({
   name: 'Home',
+  setup() {
+    const isShowWelcome = ref(true);
+
+    const handleClick = (value: any) => {
+      console.log("menu click", value)
+      isShowWelcome.value = value.key === 'welcome';
+    };
+
+    return {
+      isShowWelcome,
+      handleClick
+    };
+  }
 });
 </script>
 

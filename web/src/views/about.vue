@@ -1,51 +1,53 @@
 <template>
-  <div id="app" style="width: 400px">
-    <BarChart v-bind="barChartProps" />
+  <div id="about" style="width: 400px">
+    <LineChart v-bind="lineChartProps" />
   </div>
 </template>
 
 <script>
 import { Chart, registerables } from 'chart.js';
-import { BarChart, useBarChart } from 'vue-chart-3';
+import { LineChart, useLineChart } from 'vue-chart-3';
 import { ref, computed, defineComponent } from 'vue';
 
 Chart.register(...registerables);
 
 export default defineComponent({
-  name: 'App',
+  name: 'About',
   components: {
-    BarChart,
+    LineChart,
   },
   setup() {
-    const data = ref([30, 40, 60, 70, 5]);
-
+    const data = ref([100, 145, 230, 100, 130]);
     const chartData = computed(() => ({
-      labels: ['Paris', 'Nîmes', 'Toulon', 'Perpignan', 'Autre'],
+      labels: ['6月14日', '6月16日', '6月18日', '6月20日', '6月22日'],
       datasets: [
         {
+          label: '分享/启动用户',
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1,
           data: data.value,
-          backgroundColor: ['#77CEFF', '#0079AF', '#123E6B', '#97B0C4', '#A5C8ED'],
         },
       ],
     }));
 
-    const { barChartProps, barChartRef } = useBarChart({
+    const { lineChartProps, lineChartRef } = useLineChart({
       chartData,
     });
 
 
-    return { barChartProps, barChartRef };
+    return { lineChartProps, lineChartRef };
   },
 });
 </script>
 
 <style>
-#app {
+#about {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /*margin-top: 60px;*/
 }
 </style>
