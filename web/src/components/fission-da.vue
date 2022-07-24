@@ -129,18 +129,26 @@
       </a-col>
     </a-row>
   </div>
+  <div style="margin: 30px auto">
+    <a-card>
+      社交裂变传播
+      <fission-graph class="fission-graph"></fission-graph>
+    </a-card>
+  </div>
 </template>
 
 <script>
 import { Chart, registerables } from 'chart.js';
 import { LineChart } from 'vue-chart-3';
 import { ref, computed, defineComponent } from 'vue';
+import FissionGraph from "@/components/fission-graph";
 
 Chart.register(...registerables);
 
 export default defineComponent({
   name: 'fission-da',
   components: {
+    FissionGraph,
     LineChart,
   },
   setup() {
@@ -204,9 +212,18 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 .line-chart {
   width: 30rem;
   height: 10rem;
+}
+.fission-graph {
+  height: 10rem;
+  width: 60rem;
+  margin: auto;
+}
+/deep/ .v-canvas {
+  height: 9rem;
+  width: 59rem;
 }
 </style>
