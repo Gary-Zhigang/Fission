@@ -2,8 +2,6 @@
   <a-layout style="height: 840px; padding: 24px 0; background: #fff">
     <a-layout-sider width="200" style="background: #fff">
       <a-menu
-          v-model:selectedKeys="selectedKeys2"
-          v-model:openKeys="openKeys"
           mode="inline"
           style="height: 100%;"
           @click="handleClick"
