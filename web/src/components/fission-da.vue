@@ -133,6 +133,7 @@
     <a-card>
       社交裂变传播
       <fission-graph class="fission-graph"></fission-graph>
+      <bulb-two-tone two-tone-color="#FFD700" /> 节点颜色越深代表次数越多
     </a-card>
   </div>
 </template>
