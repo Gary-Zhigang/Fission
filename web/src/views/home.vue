@@ -24,7 +24,7 @@
                 </span>
           </template>
           <a-menu-item key="5"><router-link to="/fission-da">裂变数据分析</router-link></a-menu-item>
-          <a-menu-item key="6">市场数据分析</a-menu-item>
+          <a-menu-item key="6"><router-link to="/market-da">市场数据分析</router-link></a-menu-item>
         </a-sub-menu>
       </a-menu>
     </a-layout-sider>
